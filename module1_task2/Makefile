@@ -1,7 +1,7 @@
-build: # contruct hugo
+build: #contruct hugo
 	hugo
 
-clean: # clean content of directory
+clean: #clean content of directory
 	rm -rf ./dist/*
 
 post: #change the txt and replace with another
