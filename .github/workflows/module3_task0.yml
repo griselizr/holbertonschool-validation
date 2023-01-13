@@ -2,7 +2,7 @@ name: module3_task0
 on:
 push:
 schedule:
-  - cron: '0 15 * * *'
+      - cron: '0  15  * * *'
 jobs:
   reset:
     runs-on: ubuntu-latest
