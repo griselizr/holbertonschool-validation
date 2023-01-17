@@ -4,7 +4,7 @@ build: ##contruct hugo
 run:  ##Run the application in background by executing the binary awesome-api, and write logs into a file
 	./awesome-api >./awesome.log 2>&1 &
 stop:	##top the application with the command kill XXXXX where XXXXX is the Process ID of the application
-	kill "$(pgrep awesome-api)"
+	kill $(pgrep awesome-api)
 clean: ##clean content of directory
 	rm -rf ./dist/*
 	rm -f awesome-api 
