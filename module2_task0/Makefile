@@ -1,15 +1,15 @@
 build: ##contruct hugo
 	hugo
 	go build -o awesome-api 
-run:
+run:  ##Run the application in background by executing the binary awesome-api, and write logs into a file
 	./awesome-api >./awesome.log 2>&1 &
-stop:
+stop:	##top the application with the command kill XXXXX where XXXXX is the Process ID of the application
 	kill "$(pgrep awesome-api)"
 clean: ##clean content of directory
 	rm -rf ./dist/*
 	rm -f awesome-api 
 	rm -f awesome.log
-test:
+test: ##You want to test it to ensure that it behaves as expected
 	curl http://localhost:9999
 	curl http://localhost:9999/health
 post: ##change the txt and replace with another
