@@ -1,21 +1,8 @@
-## How to Buil a Hugo Website
-## Prerequisites
--Install Hugo
--Install git
--Install gnu makefile
-
-## Steps
-- Hugo new (name of site)
-- Construct the website
-- cd (name of the site)
-- change to root directory
-- echo "theme = 'ananke'" >> config.toml
-- apply theme style
-- hugo server
-- display website
+##Testing in the Software Development Methodology
 
 ## LifeCycle 
-    -build: Generate the website from the markdown and configuration files in the directory dist/.
-    -clean: Cleanup the content of the directory dist/
-    -post: Create a new blog post whose filename and title come from the environment variables POST_TITLE and POST_NAME.
-    -help:  target to the Makefile which prints out the list of targets and their usage. 
+    -build:  compile the source code of the application to a binary named awesome-api with the command go build
+    -run: Run the application in background by executing the binary awesome-api, and write logs into a file named awesome.log with the command ./awesome-api >./awesome.log 2>&1 &
+    -stop: Stop the application with the command kill XXXXX where XXXXX is the Process ID of the application. For instance: kill "$(pgrep awesome-api)"
+    -clean: Delete the binary awesome-api and the log file awesome.log
+    -test: You want to test it to ensure that it behaves as expected with curl http://localhost:9999 and curl http://localhost:9999/health
