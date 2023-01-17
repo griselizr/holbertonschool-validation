@@ -1,6 +1,6 @@
 ## Testing in the Software Development Methodology
 --------------
-Prerequisites
+## Prerequisites
 --------------
 -Install GO lang
 
