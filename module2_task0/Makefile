@@ -18,4 +18,3 @@ post: ##change the txt and replace with another
 .SILENT:
 help: ##prints out the list of targets and their usage
 	cat Makefile | grep '##' | tr -d '##'
-	make help
