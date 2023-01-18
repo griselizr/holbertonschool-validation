@@ -1,12 +1,11 @@
-build: ##contruct hugo
-	hugo
+build: ##build and application
 	go build -o awesome-api 
 run:  ##Run the application in background by executing the binary awesome-api, and write logs into a file
 	./awesome-api >./awesome.log 2>&1 &
 stop:	##top the application with the command kill XXXXX where XXXXX is the Process ID of the application
-	kill $(pgrep awesome-api)
+	pkill awesome-api
 clean: ##clean content of directory
-	rm -rf ./dist/*
+	pkill awesome-api
 	rm -f awesome-api 
 	rm -f awesome.log
 test: ##You want to test it to ensure that it behaves as expected

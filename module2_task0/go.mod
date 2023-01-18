@@ -1,5 +1,5 @@
-module github.com/griselizr/holbertonschool-validation/module1_task0
+module github.com/griselizr/awesome-api
 
 go 1.19
 
-require github.com/gorilla/mux v1.8.0 // indirect
+require github.com/gorilla/mux v1.8.0
