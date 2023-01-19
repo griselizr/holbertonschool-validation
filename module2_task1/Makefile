@@ -4,7 +4,7 @@ lint: ##should be implemented and should fail when the linter catches and error
 	grep WriteString ./main.go
 	make lint >/dev/null 2>&1 && echo "OK" || echo "ERROR"
 
-build: ##must always be called before the goal build, to avoid compiling the code if the linter fails
+build: ##lint must always be called before the goal build, to avoid compiling the code if the linter fails
 	go build -o awesome-api
 	grep WriteString ./main.go
 	make build >/dev/null 2>&1 && echo "OK" || echo "ERROR"
