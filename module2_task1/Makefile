@@ -1,4 +1,4 @@
-build: ####must always be called before the goal build, to avoid compiling the code if the linter fails
+build: ##must always be called before the goal build, to avoid compiling the code if the linter fails
 	grep WriteString ./main.go
 	make build >/dev/null 2>&1 && echo "OK" || echo "ERROR"
 	grep WriteString ./main.go
