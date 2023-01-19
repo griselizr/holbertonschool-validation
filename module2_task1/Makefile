@@ -1,5 +1,8 @@
-build: ##build and application
-	go build -o awesome-api 
+build: ####must always be called before the goal build, to avoid compiling the code if the linter fails
+	grep WriteString ./main.go
+	make build >/dev/null 2>&1 && echo "OK" || echo "ERROR"
+	grep WriteString ./main.go
+	make build >/dev/null 2>&1 && echo "OK" || echo "ERROR"
 run:  ##Run the application in background by executing the binary awesome-api, and write logs into a file
 	./awesome-api >./awesome.log 2>&1 &
 stop:	##top the application with the command kill XXXXX where XXXXX is the Process ID of the application
@@ -19,13 +22,7 @@ help: ##prints out the list of targets and their usage
 	cat Makefile | grep '##' | tr -d '##'
 
 lint: ##should be implemented and should fail when the linter catches and error
- ##must always be called before the goal build, to avoid compiling the code if the linter fails
 	grep WriteString ./main.go
 	make lint >/dev/null 2>&1 && echo "OK" || echo "ERROR"
 	grep WriteString ./main.go
 	make lint >/dev/null 2>&1 && echo "OK" || echo "ERROR"
-
-	grep WriteString ./main.go
-	make build >/dev/null 2>&1 && echo "OK" || echo "ERROR"
-	grep WriteString ./main.go
-	make build >/dev/null 2>&1 && echo "OK" || echo "ERROR"
