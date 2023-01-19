@@ -4,11 +4,8 @@ lint: ##should be implemented and should fail when the linter catches and error
 	grep WriteString ./main.go
 	make lint >/dev/null 2>&1 && echo "OK" || echo "ERROR"
 
-build: ##must always be called before the goal build, to avoid compiling the code if the linter fails
-	grep WriteString ./main.go
-	make build >/dev/null 2>&1 && echo "OK" || echo "ERROR"
-	grep WriteString ./main.go
-	make build >/dev/null 2>&1 && echo "OK" || echo "ERROR"
+build: ##lint must always be called before the goal build, to avoid compiling the code if the linter fails
+	make build
 run:  ##Run the application in background by executing the binary awesome-api, and write logs into a file
 	./awesome-api >./awesome.log 2>&1 &
 stop:	##top the application with the command kill XXXXX where XXXXX is the Process ID of the application
