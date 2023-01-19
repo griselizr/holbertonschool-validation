@@ -17,3 +17,15 @@ post: ##change the txt and replace with another
 .SILENT:
 help: ##prints out the list of targets and their usage
 	cat Makefile | grep '##' | tr -d '##'
+
+lint: ##should be implemented and should fail when the linter catches and error
+ ##must always be called before the goal build, to avoid compiling the code if the linter fails
+	grep WriteString ./main.go
+	make lint >/dev/null 2>&1 && echo "OK" || echo "ERROR"
+	grep WriteString ./main.go
+	make lint >/dev/null 2>&1 && echo "OK" || echo "ERROR"
+
+	grep WriteString ./main.go
+	make build >/dev/null 2>&1 && echo "OK" || echo "ERROR"
+	grep WriteString ./main.go
+	make build >/dev/null 2>&1 && echo "OK" || echo "ERROR"
