@@ -6,7 +6,10 @@ lint: ##should be implemented and should fail when the linter catches and error
 
 build: ##lint must always be called before the goal build, to avoid compiling the code if the linter fails
 	go build -o awesome-api
-	go build
+	grep WriteString ./main.go
+	build >/dev/null 2>&1 && echo "OK" || echo "ERROR"
+	grep WriteString ./main.go
+	build >/dev/null 2>&1 && echo "OK" || echo "ERROR"
 
 run:  ##Run the application in background by executing the binary awesome-api, and write logs into a file
 	./awesome-api >./awesome.log 2>&1 &
