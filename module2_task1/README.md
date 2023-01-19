@@ -8,6 +8,20 @@
 
 -Install Node.js
 
+-----
+##install golangci
+-----
+- Install curl -sSfL https://raw.githubusercontent.com/golangci/golangci-lint/master/install.sh | sh -s -- -b $(go env GOPATH)/bin v1.50.1
+
+-golangci-lint --version
+-which golangci-lint
+-go env
+-echo $PATH
+- export PATH = (copy path line)..... insert at the end by typing :/home/*your name/go/bin/
+-which golanci-lint
+-golangci-lint --version
+-golanci-lint run
+
 ## LifeCycle 
     -build:  compile the source code of the application to a binary named awesome-api with the command go build
     -run: Run the application in background by executing the binary awesome-api, and write logs into a file named awesome.log with the command ./awesome-api >./awesome.log 2>&1 &
