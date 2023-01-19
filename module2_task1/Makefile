@@ -16,7 +16,6 @@ run:  ##Run the application in background by executing the binary awesome-api, a
 stop:	##top the application with the command kill XXXXX where XXXXX is the Process ID of the application
 	pkill awesome-api
 clean: ##clean content of directory
-	pkill awesome-api
 	rm -f awesome-api 
 	rm -f awesome.log
 test: ##You want to test it to ensure that it behaves as expected
